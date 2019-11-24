@@ -1,4 +1,4 @@
-# Main ACTIONet repository
+# Main NetLibR repository
 
 # Installation 
 
