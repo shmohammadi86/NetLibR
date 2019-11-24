@@ -15,7 +15,7 @@ Now you can install ACTIONet package with devtools in R:
 
 ```{r, echo = TRUE}
 install.packages("devtools")
-devtools::install_github("shmohammadi86/ACTIONet")
+devtools::install_github("shmohammadi86/NetLibR")
 ```
 
 ## Mac OS
@@ -43,7 +43,7 @@ Now you can install ACTIONet package with devtools in R:
 
 ```{r, echo = TRUE}
 install.packages("devtools")
-devtools::install_github("shmohammadi86/ACTIONet")
+devtools::install_github("shmohammadi86/NetLibR")
 ```
 
 
