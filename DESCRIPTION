@@ -1,0 +1,20 @@
+Package: NetLibR
+Type: Package
+Title: Collection of useful graph Algorithms
+biocViews: Alignment,Motif,PageRank
+Version: 1.0
+Date: 2019-11-01
+Authors@R: c(
+    person("Shahin", "Mohammadi", email = "shahin.mohammadi@gmail.com", 
+        role = c("cre", "aut"), comment = c(ORCID = "0000-0001-8734-2326"))
+    )
+Maintainer: Shahin Mohammadi <mohammadi@broadinstitute.org>
+Description: 
+License: GPL (>= 2)
+URL: http://compbio.mit.edu/NetLibR/
+Depends: Rcpp, RcppArmadillo, Matrix, igraph
+Imports: Matrix, igraph
+LinkingTo: Rcpp,RcppArmadillo
+Encoding: UTF-8
+RoxygenNote: 6.1.1
+VignetteBuilder: knitr
