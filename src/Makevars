@@ -1,12 +1,12 @@
 SOURCES=$(wildcard bipartite_matching/*.cc)
-SOURCES+=$(wildcard kStarNN/*.cc)
+#SOURCES+=$(wildcard kStarNN/*.cc)
 SOURCES+=$(wildcard leiden/*.cc)
 #SOURCES+=$(wildcard prpack/*.cc)
 #SOURCES+=$(wildcard alignment/netalign/*.cc)
 #SOURCES+=$(wildcard kNNapprox/*.cc)
-SOURCES+=$(wildcard autocorrelation/*.cc)
-SOURCES+=$(wildcard tspanner/*.cc)
-SOURCES+=$(wildcard steiner/*.cc)
+#SOURCES+=$(wildcard autocorrelation/*.cc)
+#SOURCES+=$(wildcard tspanner/*.cc)
+#SOURCES+=$(wildcard steiner/*.cc)
 OBJECTS=NetLibR.o RcppExports.o $(SOURCES:.cc=.o)
 PKG_LIBS=$(SHLIB_OPENMP_CXXFLAGS) $(BLAS_LIBS) $(LAPACK_LIBS) -ligraph -lpthread -lm
 PKG_CXXFLAGS=`find ../inst/include -type d | sed s/^/-I/` $(SHLIB_OPENMP_CXXFLAGS) -w -msse2 -DUSE_BLAS_LIB -DAXPBY -DINT_64BITS -DARMA_64BIT_WORD -std=c++11
