@@ -21,3 +21,23 @@ unsigned_cluster <- function(A, resolution_parameter = 1.0, seed = 0L, initial_c
     .Call(`_NetLibR_unsigned_cluster`, A, resolution_parameter, seed, initial_clusters_)
 }
 
+bmatching <- function(A, b_limit, seed = 0L) {
+    .Call(`_NetLibR_bmatching`, A, b_limit, seed)
+}
+
+make_spanner <- function(G_adj, k) {
+    .Call(`_NetLibR_make_spanner`, G_adj, k)
+}
+
+netAlign <- function(A, B, L, alpha = 1.0, beta = 1.0, gamma = 0.99, maxiter = 100L, finalize = FALSE) {
+    .Call(`_NetLibR_netAlign`, A, B, L, alpha, beta, gamma, maxiter, finalize)
+}
+
+PCSF <- function(Adj, node_scores, kappa = 1.0, root = -1L, clusters = 20L, convert_similarity_to_distance = 0L) {
+    .Call(`_NetLibR_PCSF`, Adj, node_scores, kappa, root, clusters, convert_similarity_to_distance)
+}
+
+computeAutocorrelation_Geary <- function(G, scores, rand_perm = 100L, num_shuffles = 10000L) {
+    .Call(`_NetLibR_computeAutocorrelation_Geary`, G, scores, rand_perm, num_shuffles)
+}
+

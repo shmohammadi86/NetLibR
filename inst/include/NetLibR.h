@@ -24,6 +24,9 @@
 
 #include <steiner/pcst_fast.h>
 
+#include <bmatching_seq/bMatching.h>
+#include <bmatching_seq/mtxReader.h>
+#include <bmatching_seq/pcl_stack.h>
 
 #include <RcppArmadillo.h>
 #include <Rcpp.h>
@@ -61,13 +64,14 @@ namespace NetLibR {
 	sp_mat netAlign_arma(sp_mat A_mat, sp_mat B_mat, sp_mat L_mat, double alpha, double beta, double gamma, int maxiter, bool finalize);
 	
 	// Graph clustering
-	vec unsigned_cluster(sp_mat A, double resolution_parameter, int seed, uvec initial_clusters);
-	vec signed_cluster(sp_mat A, double resolution_parameter, int seed, uvec initial_clusters);
+	vec unsigned_cluster(sp_mat A, double resolution_parameter, uvec initial_clusters, int seed);
+	vec signed_cluster(sp_mat A, double resolution_parameter, uvec initial_clusters, int seed);
 
 
 	// Graph diffusion
 	mat batchPR(sp_mat &G, mat &U, double alpha, int thread_no, double tol);
 	mat batch_zoned_diffusion(sp_mat &G, uvec &zones, mat &U, double alpha, int thread_no, double tol);
+	
 	vec sweepcut(sp_mat &A, vec s);
 
 	// Graph autocorrelation
