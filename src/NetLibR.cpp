@@ -131,15 +131,6 @@ sp_mat bmatching(sp_mat A, vec b_limit, int seed = 0) {
 
 // [[Rcpp::depends(RcppArmadillo)]]
 // [[Rcpp::export]]
-sp_mat make_spanner(sp_mat &G_adj, int k) {
-	sp_mat G_sparse = NetLibR::make_spanner(G_adj, k);
-
-    return G_sparse;
-}
-
-
-// [[Rcpp::depends(RcppArmadillo)]]
-// [[Rcpp::export]]
 sp_mat netAlign(sp_mat A, sp_mat B, sp_mat L,
 							double alpha = 1.0,
 							double beta = 1.0,

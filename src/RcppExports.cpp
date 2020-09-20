@@ -83,18 +83,6 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// make_spanner
-sp_mat make_spanner(sp_mat& G_adj, int k);
-RcppExport SEXP _NetLibR_make_spanner(SEXP G_adjSEXP, SEXP kSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< sp_mat& >::type G_adj(G_adjSEXP);
-    Rcpp::traits::input_parameter< int >::type k(kSEXP);
-    rcpp_result_gen = Rcpp::wrap(make_spanner(G_adj, k));
-    return rcpp_result_gen;
-END_RCPP
-}
 // netAlign
 sp_mat netAlign(sp_mat A, sp_mat B, sp_mat L, double alpha, double beta, double gamma, int maxiter, bool finalize);
 RcppExport SEXP _NetLibR_netAlign(SEXP ASEXP, SEXP BSEXP, SEXP LSEXP, SEXP alphaSEXP, SEXP betaSEXP, SEXP gammaSEXP, SEXP maxiterSEXP, SEXP finalizeSEXP) {
@@ -151,7 +139,6 @@ static const R_CallMethodDef CallEntries[] = {
     {"_NetLibR_signed_cluster", (DL_FUNC) &_NetLibR_signed_cluster, 4},
     {"_NetLibR_unsigned_cluster", (DL_FUNC) &_NetLibR_unsigned_cluster, 4},
     {"_NetLibR_bmatching", (DL_FUNC) &_NetLibR_bmatching, 3},
-    {"_NetLibR_make_spanner", (DL_FUNC) &_NetLibR_make_spanner, 2},
     {"_NetLibR_netAlign", (DL_FUNC) &_NetLibR_netAlign, 8},
     {"_NetLibR_PCSF", (DL_FUNC) &_NetLibR_PCSF, 6},
     {"_NetLibR_computeAutocorrelation_Geary", (DL_FUNC) &_NetLibR_computeAutocorrelation_Geary, 4},

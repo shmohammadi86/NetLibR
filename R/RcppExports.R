@@ -25,10 +25,6 @@ bmatching <- function(A, b_limit, seed = 0L) {
     .Call(`_NetLibR_bmatching`, A, b_limit, seed)
 }
 
-make_spanner <- function(G_adj, k) {
-    .Call(`_NetLibR_make_spanner`, G_adj, k)
-}
-
 netAlign <- function(A, B, L, alpha = 1.0, beta = 1.0, gamma = 0.99, maxiter = 100L, finalize = FALSE) {
     .Call(`_NetLibR_netAlign`, A, B, L, alpha, beta, gamma, maxiter, finalize)
 }

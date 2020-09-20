@@ -7,7 +7,7 @@ SOURCES+=$(wildcard bmatching_seq/*.cc)
 SOURCES+=$(wildcard alignment/netalign/*.cc)
 #SOURCES+=$(wildcard kNNapprox/*.cc)
 SOURCES+=$(wildcard autocorrelation/*.cc)
-SOURCES+=$(wildcard tspanner/*.cc)
+#SOURCES+=$(wildcard tspanner/*.cc)
 SOURCES+=$(wildcard steiner/*.cc)
 OBJECTS=NetLibR.o RcppExports.o $(SOURCES:.cc=.o) $(CSOURCES:.c=.o)
 PKG_CPPFLAGS=`find ../inst/include -type d -print | sed s/^/-I/` -w -m64 -DINT_64BITS -DARMA_64BIT_WORD -O3 -march=native -mtune=native -w -m64 -fno-strict-aliasing -fomit-frame-pointer -funroll-loops -fexpensive-optimizations
