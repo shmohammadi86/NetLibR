@@ -102,18 +102,17 @@ BEGIN_RCPP
 END_RCPP
 }
 // PCSF
-sp_mat PCSF(sp_mat& Adj, vec node_scores, double kappa, int root, int clusters, int convert_similarity_to_distance);
-RcppExport SEXP _NetLibR_PCSF(SEXP AdjSEXP, SEXP node_scoresSEXP, SEXP kappaSEXP, SEXP rootSEXP, SEXP clustersSEXP, SEXP convert_similarity_to_distanceSEXP) {
+sp_mat PCSF(sp_mat& Adj, vec node_scores, int root, int clusters, int convert_similarity_to_distance);
+RcppExport SEXP _NetLibR_PCSF(SEXP AdjSEXP, SEXP node_scoresSEXP, SEXP rootSEXP, SEXP clustersSEXP, SEXP convert_similarity_to_distanceSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< sp_mat& >::type Adj(AdjSEXP);
     Rcpp::traits::input_parameter< vec >::type node_scores(node_scoresSEXP);
-    Rcpp::traits::input_parameter< double >::type kappa(kappaSEXP);
     Rcpp::traits::input_parameter< int >::type root(rootSEXP);
     Rcpp::traits::input_parameter< int >::type clusters(clustersSEXP);
     Rcpp::traits::input_parameter< int >::type convert_similarity_to_distance(convert_similarity_to_distanceSEXP);
-    rcpp_result_gen = Rcpp::wrap(PCSF(Adj, node_scores, kappa, root, clusters, convert_similarity_to_distance));
+    rcpp_result_gen = Rcpp::wrap(PCSF(Adj, node_scores, root, clusters, convert_similarity_to_distance));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -140,7 +139,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_NetLibR_unsigned_cluster", (DL_FUNC) &_NetLibR_unsigned_cluster, 4},
     {"_NetLibR_bmatching", (DL_FUNC) &_NetLibR_bmatching, 3},
     {"_NetLibR_netAlign", (DL_FUNC) &_NetLibR_netAlign, 8},
-    {"_NetLibR_PCSF", (DL_FUNC) &_NetLibR_PCSF, 6},
+    {"_NetLibR_PCSF", (DL_FUNC) &_NetLibR_PCSF, 5},
     {"_NetLibR_computeAutocorrelation_Geary", (DL_FUNC) &_NetLibR_computeAutocorrelation_Geary, 4},
     {NULL, NULL, 0}
 };

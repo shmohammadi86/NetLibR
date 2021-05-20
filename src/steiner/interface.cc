@@ -24,8 +24,8 @@ namespace NetLibR {
 		vector<double> costs(G.n_nonzero);
 		vector< pair<int, int> > edges(G.n_nonzero);
 		for(; it != it_end; ++it) {
-			if( node_scores(it.row()) == 0 || node_scores(it.col()) == 0 )
-				continue;
+			//if( node_scores(it.row()) == 0 || node_scores(it.col()) == 0 )
+				//continue;
 				
 			edges.push_back(make_pair(it.row(), it.col()));
 			
@@ -49,8 +49,10 @@ namespace NetLibR {
 		
 		PCSTFast *algo;
 		if( (root == -1) || (root >= Adj.n_rows) ) {
+			printf("PCST: unrooted (%d clusters)\n", clusters);
 			algo = new PCSTFast(edges, prizes, costs, -1, clusters, PCSTFast::kStrongPruning, 0, WriteToStderr);
 		} else {
+			printf("PCST: rooted at v%d\n", root+1);
 			algo = new PCSTFast(edges, prizes, costs, root, 0, PCSTFast::kStrongPruning, 0, WriteToStderr);
 		}
 		

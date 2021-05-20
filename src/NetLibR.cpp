@@ -146,7 +146,11 @@ sp_mat netAlign(sp_mat A, sp_mat B, sp_mat L,
 
 // [[Rcpp::depends(RcppArmadillo)]]
 // [[Rcpp::export]]
-sp_mat PCSF(sp_mat &Adj, vec node_scores, double kappa = 1.0, int root = -1, int clusters = 20, int convert_similarity_to_distance = 0) {
+sp_mat PCSF(sp_mat &Adj, vec node_scores, int root = -1, int clusters = 20, int convert_similarity_to_distance = 0) {
+	
+	if(root > 0) {
+		root = root - 1;
+	}
 	
 	sp_mat G = NetLibR::PCSF(Adj, node_scores, root, clusters, convert_similarity_to_distance);
 
@@ -168,9 +172,6 @@ List computeAutocorrelation_Geary (sp_mat &G, mat &scores, int rand_perm = 100, 
 	
     return out_list;
 }
-
-
-
 
 
 

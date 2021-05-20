@@ -29,8 +29,8 @@ netAlign <- function(A, B, L, alpha = 1.0, beta = 1.0, gamma = 0.99, maxiter = 1
     .Call(`_NetLibR_netAlign`, A, B, L, alpha, beta, gamma, maxiter, finalize)
 }
 
-PCSF <- function(Adj, node_scores, kappa = 1.0, root = -1L, clusters = 20L, convert_similarity_to_distance = 0L) {
-    .Call(`_NetLibR_PCSF`, Adj, node_scores, kappa, root, clusters, convert_similarity_to_distance)
+PCSF <- function(Adj, node_scores, root = -1L, clusters = 20L, convert_similarity_to_distance = 0L) {
+    .Call(`_NetLibR_PCSF`, Adj, node_scores, root, clusters, convert_similarity_to_distance)
 }
 
 computeAutocorrelation_Geary <- function(G, scores, rand_perm = 100L, num_shuffles = 10000L) {
